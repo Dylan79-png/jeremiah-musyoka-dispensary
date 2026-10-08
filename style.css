@@ -140,22 +140,40 @@ img {
 }
 
 /* HERO */
-
 .hero {
-    min-height: 530px;
-    background: linear-gradient(
-        120deg,
-        var(--brown-dark),
-        var(--brown-main)
-    );
-    color: var(--white);
-    padding: 75px 8%;
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    align-items: center;
-    gap: 45px;
-    overflow: hidden;
+min-height: 530px;
+background: var(--brown-dark);
+color: var(--white);
+padding: 75px 8%;
+display: grid;
+grid-template-columns: 1fr;
+align-items: center;
+position: relative;
+isolation: isolate;
+overflow: hidden;
 }
+
+/* FULL HERO PHOTO BACKGROUND */
+
+.hero > .hero-slider {
+position: absolute;
+inset: 0;
+z-index: -2;
+border-radius: 0;
+}
+
+.hero > .hero-slider::after {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(
+90deg,
+rgba(45, 29, 20, 0.92),
+rgba(73, 49, 36, 0.72)
+);
+z-index: 1;
+}
+
 
 .hero-content {
     max-width: 680px;
