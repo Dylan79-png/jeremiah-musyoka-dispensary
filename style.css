@@ -14,6 +14,8 @@
     --text-dark: #302319;
     --text-muted: #74665B;
     --border: #E5D8C8;
+    --link: #2F6B4F;
+    --link-hover: #1F4D37;
 }
 
 /* RESET */
@@ -706,4 +708,15 @@ align-content: center;
     .footer-bottom {
         flex-direction: column;
     }
+}
+
+main a:not(.btn) {
+    color: var(--link);
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+main a:not(.btn):hover {
+    color: var(--link-hover);
 }
