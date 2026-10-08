@@ -1,5 +1,5 @@
 // =================================
-// JEREMIAH MUSYOKA DISPENSARY
+// Kanaani Hospital
 // WEBSITE JAVASCRIPT
 // =================================
 
@@ -75,4 +75,24 @@ const currentYear = document.getElementById("current-year");
 
 if (currentYear) {
     currentYear.textContent = new Date().getFullYear();
+}
+
+// AUTOMATIC HERO PHOTO SLIDER
+
+const heroSlides = document.querySelectorAll(".hero-slide");
+
+if (heroSlides.length > 1) {
+
+    let currentSlide = 0;
+
+    setInterval(function () {
+
+        heroSlides[currentSlide].classList.remove("active");
+
+        currentSlide = (currentSlide + 1) % heroSlides.length;
+
+        heroSlides[currentSlide].classList.add("active");
+
+    }, 3000);
+
 }
